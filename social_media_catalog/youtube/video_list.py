@@ -7,8 +7,6 @@ from itertools import zip_longest
 from typing import Any
 from typing_extensions import Self
 
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
 
 from social_media_catalog.youtube import Video
 
@@ -77,9 +75,7 @@ class VideoList:
             for video in data["Videos"]:
                 video_list.append(Video.from_json(video))
 
-            return cls(
-                data["PlaylistId"], data["PlaylistName"], video_list
-            )
+            return cls(data["PlaylistId"], data["PlaylistName"], video_list)
 
         raise ValueError(
             "The parsed data does not contain one or more of the "
