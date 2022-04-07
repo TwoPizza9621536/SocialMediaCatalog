@@ -1,0 +1,109 @@
+# SPDX-FileCopyrightText: 2022 The Social Media Catalog Contributors
+#
+# SPDX-License-Identifier: CC0-1.0
+[tool.poetry]
+name = "social-media-catalog"
+version = "2.0.1"
+description = ""
+authors = ["The Social Media Catalog Contributors"]
+license = "BSD-3-Clause"
+packages = [{ include = "social_media_listing" }]
+homepage = "https://github.com/TwoPizza9621536/VideoLister-Python"
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python",
+    "Topic :: Internet :: WWW/HTTP",
+]
+
+[tool.black]
+ensure_newline_before_comments = true
+line-length = 79
+skip-magic-trailing-comma = true
+skip-string-normalization = true
+target-version = ["py36", "py37", "py38", "py39", "py310"]
+use_parentheses = true
+
+[tool.pylint.master]
+extension-pkg-whitelist = ["google-api-python-client", "google-auth-oauthlib"]
+
+[tool.pylint.messages_control]
+confidence = "HIGH"
+disable = "C0330, C0326"
+enable = "E, W"
+jobs = 8
+
+[tool.pylint.format]
+max-line-length = 79
+max-module-lines = 2000
+
+[tool.flake8]
+exclude = [".git", "__pycache__", "docs", "old", "build", "dist"]
+extend-ignore = "E203"
+max-complexity = 30
+max-line-length = 79
+
+[tool.isort]
+default_section = "LOCALFOLDER"
+ensure_newline_before_comments = true
+force_single_line = true
+known_third_party = ["google-api-python-client", "google-auth-oauthlib"]
+line_length = 79
+lines_after_imports = 2
+multi_line_output = 3
+profile = "black"
+sections = "LOCALFOLDER"
+use_parentheses = true
+
+[tool.mypy]
+check_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_subclassing_any = false
+disallow_untyped_defs = false
+follow_imports = "silent"
+ignore_missing_imports = true
+no_implicit_optional = false
+strict_optional = false
+warn_no_return = true
+warn_return_any = true
+warn_unreachable = true
+warn_unused_configs = true
+
+[tool.poetry.dependencies]
+python = "^3.7"
+google-api-python-client = "^2.37.0"
+google-auth-httplib2 = "^0.1.0"
+google-auth-oauthlib = "^0.4.6"
+
+[tool.poetry.dev-dependencies]
+autopep8 = "^1.6.0"
+coverage = "^6.3.1"
+pylint = "^2.12.2"
+tox = "^3.24.5"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py3{6,7,8,9,10}
+
+[testenv]
+deps =
+    -r requirements.txt
+    -r requirements_dev.txt
+commands =
+    coverage erase
+    coverage -m unittest tests
+    coverage report --omit='.tox/*'
+    coverage html --omit='.tox/*'
+"""
+
+[build-system]
+requires = ["setuptools>=60.0.0"]
+build-backend = "setuptools.build_meta"

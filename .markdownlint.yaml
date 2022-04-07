@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2022 The Social Media Catalog Contributors
+#
+# SPDX-License-Identifier: CC0-1.0
+
+default: true
+
+MD013:
+    stern: true
+
+MD024:
+    siblings_only: true
