@@ -7,24 +7,15 @@ from itertools import zip_longest
 from typing import Any
 from typing_extensions import Self
 
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
-
 from social_media_catalog.youtube import Video
 
 
-class VideoList:
+class Playlist:
     """A class to store the videos with the playlist name and id."""
 
     def __init__(
-        self: "VideoList",
-        playlist_id: str,
-        playlist_name: str,
-        videos: list[Video],
+        self: Self, playlist_id: str, playlist_name: str, videos: list[Video]
     ) -> None:
-        self.schema: str = (
-            "https://twopizza9621536.github.io/schema/json/videolist.json"
-        )
         self.playlist_id: str = playlist_id
         self.playlist_name: str = playlist_name
         self.videos: list[Video] = videos
@@ -52,7 +43,7 @@ class VideoList:
         }
 
     @classmethod
-    def from_json(cls: Self, data: dict[str, Any]) -> Self:
+    def from_json(cls: Self, data: dict[str, Any], /) -> Self:
         """Convert the formatted json data back to a VideoList object.
 
         Args:
@@ -77,9 +68,7 @@ class VideoList:
             for video in data["Videos"]:
                 video_list.append(Video.from_json(video))
 
-            return cls(
-                data["PlaylistId"], data["PlaylistName"], video_list
-            )
+            return cls(data["PlaylistId"], data["PlaylistName"], video_list)
 
         raise ValueError(
             "The parsed data does not contain one or more of the "
@@ -87,8 +76,8 @@ class VideoList:
             "'PlaylistId', 'PlaylistName' or 'Videos'"
         )
 
-    def __eq__(self: "VideoList", other: object) -> bool:
-        if not isinstance(other, VideoList):
+    def __eq__(self: Self, other: object) -> bool:
+        if not isinstance(other, Self):
             return False
         for a, b in zip_longest(self.videos, other.videos):
             if not a == b:

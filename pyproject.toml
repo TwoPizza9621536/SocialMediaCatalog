@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: CC0-1.0
 [tool.poetry]
 name = "social-media-catalog"
-version = "2.0.1"
+version = "1.0.0"
 description = ""
 authors = ["The Social Media Catalog Contributors"]
 license = "BSD-3-Clause"
@@ -91,7 +91,7 @@ tox = "^3.24.5"
 [tool.tox]
 legacy_tox_ini = """
 [tox]
-envlist = py3{6,7,8,9,10}
+envlist = py3{7,8,9,10}
 
 [testenv]
 deps =

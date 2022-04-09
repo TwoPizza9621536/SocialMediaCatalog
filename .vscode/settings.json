@@ -1,0 +1,25 @@
+{
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    "./tests",
+    "-p",
+    "*_test.py"
+  ],
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestEnabled": true,
+  "cSpell.words": [
+    "oauthlib"
+  ],
+  "yaml.schemas": {
+    "https://twopizza9621536.github.io/schema/json/playlist.json": "playlist.yaml"
+  },
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/playlist.json"
+      ],
+      "url": "https://twopizza9621536.github.io/schema/json/playlist.json"
+    }
+  ]
+}

@@ -6,23 +6,26 @@
 from typing import Any
 from typing_extensions import Self
 
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+
 from social_media_catalog.youtube import Video
 
 
-def get_youtube_credentials(client_secret: str = "client_secret.json") -> Any:
+def get_youtube_credentials(client_secret: str = "client_secrets.json") -> Any:
     """The credentials needed to get personal play list, e.g. liked
     videos.
 
     Args:
-        client_secret (str, optional): A string to the filename of the client
-        secret. Defaults to "client_secret.json".
-
+        client_secret (str): A string to the filename of the client
+        secret. Defaults to "client_secrets.json".
     Returns:
         Any: The OAuth 2.0 used to getvideo meta-data.
     """
 
     credentials = InstalledAppFlow.from_client_secrets_file(
-        client_secret, ["https://www.googleapis.com/auth/youtube.readonly"]
+        client_secret,
+        ["https://www.googleapis.com/auth/youtube.readonly"],
     ).run_console()
 
     return build("youtube", "v3", credentials=credentials)
@@ -33,9 +36,9 @@ class VideoDownloader:
 
     def __init__(self: Self) -> None:
         self.playlist_id: str = ""
-        self.auth_credentials: Any = get_youtube_credentials()
+        self.auth_credentials: Any = None
 
-    def get_single_page(self: Self, page_token: str = "") -> Any:
+    def get_single_page(self: Self, page_token: str = "", /) -> Any:
         """Asynchronously download 50 video meta-data at a time as a
         play-list item list.
 
@@ -60,7 +63,7 @@ class VideoDownloader:
             .execute()
         )
 
-    def get_video_list(self: Self) -> list[Video]:
+    def get_playlist(self: Self) -> list[Video]:
         """Recursively download meta-data from a play-list using
         'get_single_page'.
 

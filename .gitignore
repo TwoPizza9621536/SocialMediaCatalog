@@ -4,9 +4,8 @@
 
 coveragereport/
 coverage.cobertura.xml
-client_secret.json
+client_secret*.json
 data/
-.vscode/
 *.xsd
 .idea/
 .dcignore
