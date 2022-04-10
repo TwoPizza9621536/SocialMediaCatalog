@@ -3,9 +3,9 @@
 # SPDX-License-Identifier: CC0-1.0
 
 [licenses]
-accepted = ["BSD-3-Clause"]
+accepted = ["BSD", "MIT", "Apache"]
 
 [dependencies]
 # This will allow users to flag some dependencies so that Licensebat will not
 # check for their license.
-ignored=["Google.Apis.YouTube.v3"]
+ignored=[]

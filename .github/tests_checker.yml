@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2022 The Social Media Catalog Contributors
+#
+# SPDX-License-Identifier: CC0-1.0
+comment: "Could you please add tests to make sure this change works as expected?"
+fileExtensions: [".py"]
+testDir: "tests"
+testPattern: "test_*.py"

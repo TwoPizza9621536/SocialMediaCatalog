@@ -76,18 +76,6 @@ warn_return_any = true
 warn_unreachable = true
 warn_unused_configs = true
 
-[tool.poetry.dependencies]
-python = "^3.7"
-google-api-python-client = "^2.37.0"
-google-auth-httplib2 = "^0.1.0"
-google-auth-oauthlib = "^0.4.6"
-
-[tool.poetry.dev-dependencies]
-autopep8 = "^1.6.0"
-coverage = "^6.3.1"
-pylint = "^2.12.2"
-tox = "^3.24.5"
-
 [tool.tox]
 legacy_tox_ini = """
 [tox]
@@ -96,10 +84,10 @@ envlist = py3{7,8,9,10}
 [testenv]
 deps =
     -r requirements.txt
-    -r requirements_dev.txt
+    -r requirements-dev.txt
 commands =
     coverage erase
-    coverage -m unittest tests
+    coverage -m pytest tests
     coverage report --omit='.tox/*'
     coverage html --omit='.tox/*'
 """

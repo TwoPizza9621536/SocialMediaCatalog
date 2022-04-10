@@ -24,7 +24,7 @@ For an older version of this changelog see
 ### Changed
 
 - Moved the entire project from Video Lister to here.
-- Integrate the youtube authentication function with downloader.
+- Integrate the YouTube authentication function with downloader.
 - Rename video_list to playlist.
 
 [1]: <https://github.com/TwoPizza9621536/VideoLister/blob/main/CHANGELOG.md>
