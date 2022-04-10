@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: CC0-1.0
 
 coveragereport/
-coverage.cobertura.xml
+coverage.*
 client_secret*.json
 data/
 *.xsd
