@@ -10,4 +10,4 @@ pip-review==1.1.1
 pre-commit==2.17.0
 pylint==2.12.2
 pytest==7.1.1
-tox==3.24.5
+tox==3.25.0
