@@ -79,13 +79,13 @@ class VideoDownloader:
         while page_token is not None:
             response = self.get_single_page(page_token)
 
-            for video in response["items"]:
-                videos.append(
-                    Video(
-                        video["snippet"]["resourceId"]["videoId"],
-                        video["snippet"]["title"],
-                    )
+            videos.extend(
+                Video(
+                    video["snippet"]["resourceId"]["videoId"],
+                    video["snippet"]["title"],
                 )
+                for video in response["items"]
+            )
 
             page_token = (
                 response["nextPageToken"]

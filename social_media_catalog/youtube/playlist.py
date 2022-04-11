@@ -27,10 +27,7 @@ class Playlist:
         Returns:
             dict[str, Any]: The VideoList object as a dictionary.
         """
-        videos_list = []
-
-        for video in self.videos:
-            videos_list.append(asdict(video))
+        videos_list = [asdict(video) for video in self.videos]
 
         return {
             "PlaylistId": self.playlist_id,
@@ -60,10 +57,7 @@ class Playlist:
             and "PlaylistName" in data
             and "Videos" in data
         ):
-            video_list = []
-            for video in data["Videos"]:
-                video_list.append(Video.from_json(video))
-
+            video_list = [Video.from_json(video) for video in data["Videos"]]
             return cls(data["PlaylistId"], data["PlaylistName"], video_list)
 
         raise ValueError(
