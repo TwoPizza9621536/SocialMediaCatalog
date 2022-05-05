@@ -36,7 +36,7 @@ class VideoDownloader:
         self.playlist_id: str = ""
         self.auth_credentials: Any = None
 
-    def get_single_page(self, page_token: str = "", /) -> Any:
+    def get_single_page(self, page_token: str = "") -> Any:
         """Asynchronously download 50 video meta-data at a time as a
         play-list item list.
 
@@ -61,7 +61,7 @@ class VideoDownloader:
             .execute()
         )
 
-    def get_playlist(self) -> list[Video]:
+    def get_playlist(self) -> "list[Video]":
         """Recursively download meta-data from a play-list using
         'get_single_page'.
 
@@ -79,13 +79,12 @@ class VideoDownloader:
         while page_token is not None:
             response = self.get_single_page(page_token)
 
-            for video in response["items"]:
-                videos.append(
-                    Video(
-                        video["snippet"]["resourceId"]["videoId"],
-                        video["snippet"]["title"],
-                    )
+            videos.extend(
+                Video(video["snippet"]["resourceId"]["videoId"],
+                    video["snippet"]["title"]
                 )
+                for video in response["items"]
+            )
 
             page_token = (
                 response["nextPageToken"]

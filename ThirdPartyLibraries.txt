@@ -14,9 +14,14 @@ our attention through creating an issue here:
 
         https://github.com/TwoPizza9621536/SocialMediaCatalog/issues
 
+- Dear PyGui: https://github.com/hoffstadt/DearPyGui
 - Google and YouTube API v3: https://developers.google.com/youtube/v3/
 
 Begin ThirdPartyLibraries.txt
+
+Dear PyGui
+
+
 
 Google and YouTube API v3
 ================================================================================

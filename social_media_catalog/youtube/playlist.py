@@ -15,9 +15,9 @@ class Playlist:
 
     playlist_id: str
     playlist_name: str
-    videos: list[Video]
+    videos: "list[Video]"
 
-    def to_dict(self) -> dict[str, Any]:
+    def to_dict(self) -> "dict[str, Any]":
         """Convert the VideoList object to a dictionary for json usage.
 
         Args:
@@ -27,19 +27,16 @@ class Playlist:
         Returns:
             dict[str, Any]: The VideoList object as a dictionary.
         """
-        videos_list = []
-
-        for video in self.videos:
-            videos_list.append(asdict(video))
+        videos_list = [asdict(video) for video in self.videos]
 
         return {
-            "PlaylistId": self.playlist_id,
-            "PlaylistName": self.playlist_name,
-            "Videos": videos_list,
+            "playlistId": self.playlist_id,
+            "playlistName": self.playlist_name,
+            "videos": videos_list,
         }
 
     @classmethod
-    def from_json(cls, data: dict[str, Any], /):
+    def from_json(cls, data: "dict[str, Any]"):
         """Convert the formatted json data back to a VideoList object.
 
         Args:
@@ -56,18 +53,15 @@ class Playlist:
         """
 
         if (
-            "PlaylistId" in data
-            and "PlaylistName" in data
-            and "Videos" in data
+            "playlistId" in data
+            and "playlistName" in data
+            and "videos" in data
         ):
-            video_list = []
-            for video in data["Videos"]:
-                video_list.append(Video.from_json(video))
-
-            return cls(data["PlaylistId"], data["PlaylistName"], video_list)
+            video_list = [Video.from_json(video) for video in data["videos"]]
+            return cls(data["playlistId"], data["playlistName"], video_list)
 
         raise ValueError(
             "The parsed data does not contain one or more of the "
             "following keys:\n"
-            "'PlaylistId', 'PlaylistName' or 'Videos'"
+            "'playlistId', 'playlistName' or 'videos'"
         )

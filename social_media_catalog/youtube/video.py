@@ -14,19 +14,8 @@ class Video:
     video_id: str
     video_title: str
 
-    # def to_dict(self) -> dict[str, str]:
-    #     """Convert the Video object to a readable dictionary.
-
-    #     Args:
-    #         self: The object that stores the title and the id of the video.
-
-    #     Returns:
-    #         dict[str, str]: The Video object as a dictionary.
-    #     """
-    #     return {"Id": self.video_id, "Title": self.video_title}
-
     @classmethod
-    def from_json(cls, video: dict[str, str]):
+    def from_json(cls, video: "dict[str, str]"):
         """Convert a json object back to a Video object.
 
         Args:
@@ -36,15 +25,15 @@ class Video:
 
         Raises:
             ValueError: If dictionary does not contain any of the following
-            keys: 'Id' or 'Title'.
+            keys: 'id' or 'title'.
 
         Returns:
             Self: The Video object that was converted from a dictionary.
         """
-        if "Id" in video and "Title" in video:
-            return cls(video["Id"], video["Title"])
+        if "id" in video and "title" in video:
+            return cls(video["id"], video["title"])
 
         raise ValueError(
             "The one of the videos does not contain the keys:\n"
-            "'Id' or 'Title'"
+            "'id' or 'title'"
         )

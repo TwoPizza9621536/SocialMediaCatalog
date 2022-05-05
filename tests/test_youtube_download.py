@@ -43,8 +43,8 @@ class TestYoutubeDownload:
         Args:
             self: The test object to test exceptions in 'video_downloader'.
         """
-        dict_to_video_data = {"Title": "Testing 123"}
-        dict_to_playlist_data = {"PlaylistId": "ABC1DEF2GHI3JKL4MNO5"}
+        dict_to_video_data = {"title": "Testing 123"}
+        dict_to_playlist_data = {"playlistId": "ABC1DEF2GHI3JKL4MNO5"}
 
         with raises(ValueError):
             Video.from_json(dict_to_video_data)
