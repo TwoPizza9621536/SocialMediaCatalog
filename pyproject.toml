@@ -92,5 +92,5 @@ commands =
 """
 
 [build-system]
-requires = ["setuptools>=60.0.0", "wheel"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
