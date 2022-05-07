@@ -56,7 +56,7 @@ class VideoDownloader:
                 maxResults=50,
                 pageToken=page_token,
                 part="snippet",
-                playlistId=self.playlist_id,
+                playlistId=self.playlist_id
             )
             .execute()
         )

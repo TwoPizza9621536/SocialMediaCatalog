@@ -8,13 +8,17 @@ working as intended.
 from pytest import raises
 import json
 
+
 from social_media_catalog.youtube import get_youtube_credentials
 from social_media_catalog.youtube import VideoDownloader
 from social_media_catalog.youtube import Playlist
 from social_media_catalog.youtube import Video
 
+
 TEST_PLAYLIST_DATA = "playlist.json"
 PLAYLIST_ID = "PLFsQleAWXsj_4yDeebiIADdH5FMayBiJo"
+
+
 def test_get_playlist() -> None:
     """Check if it can download an entire playlist and if the list is
     correct.
