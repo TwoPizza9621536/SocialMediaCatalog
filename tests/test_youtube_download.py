@@ -5,8 +5,10 @@
 working as intended.
 """
 
-from pytest import raises
 import json
+
+
+from pytest import raises
 
 
 from social_media_catalog.youtube import get_youtube_credentials
@@ -24,10 +26,14 @@ def test_get_playlist() -> None:
     correct.
     """
 
-    vd = VideoDownloader()
-    vd.auth_credentials = get_youtube_credentials()
-    vd.playlist_id = PLAYLIST_ID
-    playlist = Playlist(PLAYLIST_ID, "important videos", vd.get_playlist())
+    video_downloader = VideoDownloader()
+    video_downloader.auth_credentials = get_youtube_credentials()
+    video_downloader.playlist_id = PLAYLIST_ID
+    playlist = Playlist(
+        PLAYLIST_ID,
+        "important videos",
+        video_downloader.get_playlist()
+    )
 
     with open(TEST_PLAYLIST_DATA, encoding="utf-8") as test_file:
         json_data = json.loads(test_file.read())
