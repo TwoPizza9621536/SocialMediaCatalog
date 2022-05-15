@@ -9,7 +9,8 @@ def new_catalog_window(playlist):
             dpg.add_table_column(label="Video Title")
             dpg.add_table_column(label="Video Id")
 
-            for i in range(3):
+            #TODO: Add videos to the table
+            for k, v in playlist.videos:
                 with dpg.table_row():
-                    for j in range(2):
-                        dpg.add_text(f"Row{i} Column{j}")
+                    for _j in range(2):
+                        dpg.add_text(f"")
