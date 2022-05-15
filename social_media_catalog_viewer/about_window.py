@@ -23,7 +23,7 @@ def about_window():
         )
         dpg.add_separator()
         dpg.add_text(
-            "Social Media Catalog uses third party libraries that "
+            "Social Media Catalog uses third party libraries and assets that "
             "are under different licenses, see ThirdPartyLibraries.txt for "
             "more infomation.",
             wrap=650,

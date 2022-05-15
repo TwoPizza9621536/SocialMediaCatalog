@@ -66,14 +66,14 @@ def welcome_window():
         label="Welcome",
         tag="welcome",
         width=365,
-        height=120,
-        pos=(380, 300),
+        height=130,
+        pos=(360, 300),
         menubar=True,
     ):
-        dpg.add_text(tag="welcome dialog", wrap=350)
-        with dpg.group(horizontal=True, pos=(0, 80)):
+        dpg.add_text(tag="welcome dialog", wrap=360)
+        with dpg.group(horizontal=True, pos=(0, 90)):
             dpg.add_separator()
-            dpg.add_button(label="Back", tag="back btn", pos=(15, 90))
-            dpg.add_button(label="Next", tag="next btn", pos=(315, 90))
+            dpg.add_button(label="Back", tag="back btn", pos=(15, 100))
+            dpg.add_button(label="Next", tag="next btn", pos=(315, 100))
 
         page_one()

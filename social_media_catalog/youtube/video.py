@@ -30,10 +30,10 @@ class Video:
         Returns:
             Self: The Video object that was converted from a dictionary.
         """
-        if "id" in video and "title" in video:
-            return cls(video["id"], video["title"])
+        if "id" not in video or "title" not in video:
+            raise ValueError(
+                "The one of the videos does not contain the keys:\n"
+                "'id' or 'title'"
+            )
 
-        raise ValueError(
-            "The one of the videos does not contain the keys:\n"
-            "'id' or 'title'"
-        )
+        return cls(video["id"], video["title"])

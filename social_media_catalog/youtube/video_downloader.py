@@ -56,7 +56,7 @@ class VideoDownloader:
                 maxResults=50,
                 pageToken=page_token,
                 part="snippet",
-                playlistId=self.playlist_id
+                playlistId=self.playlist_id,
             )
             .execute()
         )
@@ -80,8 +80,9 @@ class VideoDownloader:
             response = self.get_single_page(page_token)
 
             videos.extend(
-                Video(video["snippet"]["resourceId"]["videoId"],
-                    video["snippet"]["title"]
+                Video(
+                    video["snippet"]["resourceId"]["videoId"],
+                    video["snippet"]["title"],
                 )
                 for video in response["items"]
             )

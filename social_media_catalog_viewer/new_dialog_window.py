@@ -5,6 +5,9 @@
 from dearpygui import dearpygui as dpg
 
 
+from file_handler import file_dialog
+
+
 def new_dialog_window():
     """Creates a new dialog window to create a new catalog to open a file."""
     if dpg.does_item_exist("welcome"):
@@ -18,7 +21,7 @@ def new_dialog_window():
     with dpg.child_window(
         label="New",
         tag="new",
-        parent="Main Window",
+        parent="main_window",
         width=640,
         height=480,
         pos=(225, 150),
@@ -26,7 +29,9 @@ def new_dialog_window():
         dpg.add_text("")
         with dpg.group(horizontal=True):
             dpg.add_button(label="New Catalog")
-            dpg.add_button(label="Open Catalog")
+            dpg.add_button(
+                label="Open Catalog", callback=file_dialog, user_data="open"
+            )
 
         dpg.add_button(
             label="Close",

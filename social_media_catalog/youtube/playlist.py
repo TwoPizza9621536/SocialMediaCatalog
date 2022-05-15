@@ -53,15 +53,15 @@ class Playlist:
         """
 
         if (
-            "playlistId" in data
-            and "playlistName" in data
-            and "videos" in data
+            "playlistId" not in data
+            or "playlistName" not in data
+            or "videos" not in data
         ):
-            video_list = [Video.from_json(video) for video in data["videos"]]
-            return cls(data["playlistId"], data["playlistName"], video_list)
+            raise ValueError(
+                "The parsed data does not contain one or more of the "
+                "following keys:\n"
+                "'playlistId', 'playlistName' or 'videos'"
+            )
 
-        raise ValueError(
-            "The parsed data does not contain one or more of the "
-            "following keys:\n"
-            "'playlistId', 'playlistName' or 'videos'"
-        )
+        video_list = [Video.from_json(video) for video in data["videos"]]
+        return cls(data["playlistId"], data["playlistName"], video_list)
