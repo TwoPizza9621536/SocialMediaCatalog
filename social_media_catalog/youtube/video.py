@@ -19,9 +19,8 @@ class Video:
         """Convert a json object back to a Video object.
 
         Args:
-            cls: The object that we want to convert from JSON.
-            video (dict[str, str]): The dictionary that constains the keys:
-            'Id' and 'Title'.
+            video (dict[str, str]): The dictionary that contains the following
+            keys: 'id' and 'title'.
 
         Raises:
             ValueError: If dictionary does not contain any of the following

@@ -37,15 +37,15 @@ class Playlist:
 
     @classmethod
     def from_json(cls, data: "dict[str, Any]"):
-        """Convert the formatted json data back to a VideoList object.
+        """Convert a formatted json data back to a VideoList object.
 
         Args:
-            data (dict[str, Any]): The dictionary that constains the keys:
-            'PlaylistId', 'PlaylistName' and 'Videos'.
+            data (dict[str, Any]): The dictionary that contains the following
+            keys: 'playlistId', 'playlistName' and 'videos'.
 
         Raises:
             ValueError: If dictionary does not contain any of the following
-            keys: 'PlaylistId', 'PlaylistName' or 'Videos'.
+            keys: 'playlistId', 'playlistName' or 'videos'.
 
         Returns:
             Self: The object that was converted from a
