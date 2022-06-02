@@ -12,14 +12,14 @@ from social_media_catalog.youtube import Video
 
 
 def get_youtube_credentials(client_secret: str = "client_secrets.json") -> Any:
-    """The credentials needed to get personal play list, e.g. liked
+    """The credentials needed to get personal play-list, e.g. liked
     videos.
 
     Args:
         client_secret (str): A string to the filename of the client
         secret. Defaults to "client_secrets.json".
     Returns:
-        Any: The OAuth 2.0 used to getvideo meta-data.
+        Any: The OAuth 2.0 used to get video meta-data.
     """
 
     credentials = InstalledAppFlow.from_client_secrets_file(
