@@ -4,4 +4,4 @@
 """Export all functions and modules for social_media_catalog."""
 
 
-__all__ = ["social_media_catalog.youtube"]
+__all__ = ["youtube"]
