@@ -62,4 +62,4 @@ Additionally, you are subjected under any ToS and Privacy Policy for APIs and
 Services.
 
 This project uses third party libraries, see
-[ThirdPartyLibraries.txt](ThirdPartyLibraries.txt).
+[THIRDPARTYLICENSES.TXT](THIRDPARTYLICENSES.TXT).
