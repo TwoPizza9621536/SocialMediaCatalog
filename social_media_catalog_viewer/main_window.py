@@ -48,5 +48,5 @@ def main_window():
         dpg.add_input_text(default_value="Search")
 
         with dpg.tab_bar(tag="main_viewer"):
-            #TODO: Implement close tab
+            # TODO: Implement close tab
             dpg.add_tab_button(label="X", trailing=True)
