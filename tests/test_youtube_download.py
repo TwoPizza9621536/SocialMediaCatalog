@@ -30,9 +30,7 @@ def test_get_playlist() -> None:
     video_downloader.auth_credentials = get_youtube_credentials()
     video_downloader.playlist_id = PLAYLIST_ID
     playlist = Playlist(
-        PLAYLIST_ID,
-        "important videos",
-        video_downloader.get_playlist()
+        PLAYLIST_ID, "important videos", video_downloader.get_playlist()
     )
 
     with open(TEST_PLAYLIST_DATA, encoding="utf-8") as test_file:
@@ -40,6 +38,7 @@ def test_get_playlist() -> None:
 
     Playlist.from_json(json_data)
     assert json.dumps(playlist.to_dict()), json.dumps(json_data)
+
 
 def test_object_exceptions() -> None:
     """Test exceptions if there are missing keys or values."""
