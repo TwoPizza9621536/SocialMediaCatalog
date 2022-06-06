@@ -1,6 +1,6 @@
-Social Media Catalog requires the following third party dependencies and/or
-libraries that are distributed under licenses different other than the
-BSD-3-Clause license using the following SPDX identifier expressions:
+Social Media Catalog requires the following third party dependencies or libraries
+that are distributed under licenses different other than the BSD-3-Clause license
+using the following SPDX identifier expressions:
 
 ```
 SPDX-FileCopyrightText: 2021-2022 The Social Media Catalog Contributors
@@ -8,9 +8,9 @@ SPDX-FileCopyrightText: 2021-2022 The Social Media Catalog Contributors
 SPDX-License-Identifier: BSD-3-Clause
 ```
 
-Below is a list of libraries this project uses and their respective licenses. In
-the event if we accidentally left a library out of this list, please bring it to
-our attention through creating an issue here:
+Below is a list of dependencies or libraries this project uses and their
+respective licenses. In the event if we accidentally left a library out of this
+list, please bring it to our attention through creating an issue here:
 
         https://github.com/TwoPizza9621536/SocialMediaCatalog/issues
 
