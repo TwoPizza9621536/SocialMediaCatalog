@@ -1,6 +1,6 @@
 Social Media Catalog requires the following third party dependencies and/or
 libraries that are distributed under licenses different other than the
-BSD-3-Clause license using using the following SPDX identifier expressions:
+BSD-3-Clause license using the following SPDX identifier expressions:
 
 ```
 SPDX-FileCopyrightText: 2021-2022 The Social Media Catalog Contributors
@@ -16,7 +16,7 @@ our attention through creating an issue here:
 
 - Google and YouTube API v3: https://developers.google.com/youtube/v3/
 
-Begin ThirdPartyLibraries.txt
+Begin THIRDPARTYLICENSES.TXT
 
 Google and YouTube API v3
 ================================================================================
@@ -37,4 +37,4 @@ limitations under the License.
 
 --------------------------------------------------------------------------------
 
-End ThirdPartyLibraries.txt
+End THIRDPARTYLICENSES.TXT
