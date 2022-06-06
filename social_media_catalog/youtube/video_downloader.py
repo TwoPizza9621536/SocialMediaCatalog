@@ -12,14 +12,14 @@ from social_media_catalog.youtube import Video
 
 
 def get_youtube_credentials(client_secret: str = "client_secrets.json") -> Any:
-    """The credentials needed to get personal play list, e.g. liked
+    """The credentials needed to get personal play-list, e.g. liked
     videos.
 
     Args:
         client_secret (str): A string to the filename of the client
         secret. Defaults to "client_secrets.json".
     Returns:
-        Any: The OAuth 2.0 used to getvideo meta-data.
+        Any: The OAuth 2.0 used to get video meta-data.
     """
 
     credentials = InstalledAppFlow.from_client_secrets_file(
@@ -36,7 +36,7 @@ class VideoDownloader:
         self.playlist_id: str = ""
         self.auth_credentials: Any = None
 
-    def get_single_page(self, page_token: str = "", /) -> Any:
+    def get_single_page(self, page_token: str = "") -> Any:
         """Asynchronously download 50 video meta-data at a time as a
         play-list item list.
 
@@ -61,7 +61,7 @@ class VideoDownloader:
             .execute()
         )
 
-    def get_playlist(self) -> list[Video]:
+    def get_playlist(self) -> "list[Video]":
         """Recursively download meta-data from a play-list using
         'get_single_page'.
 

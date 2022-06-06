@@ -4,8 +4,8 @@
 > times a try.
 
 Social Media Catalog (not an actual catalog but downloads a catalog) is a python
-library that downloads entries for YouTube, Twitter, etc. This provides an
-abstraction layer to provide a better coding experience.
+library and utility that downloads entries for YouTube, Twitter, etc. This
+provides an abstraction layer to provide a better coding experience.
 
 - [Social Media Catalog](#social-media-catalog)
   - [Getting Started](#getting-started)
@@ -16,21 +16,20 @@ abstraction layer to provide a better coding experience.
 
 ## Getting Started
 
-Install the library by typing this command:
+First clone the repository:
 
 ```bash
-pip install social-media-catalog
+git clone https://github.com/TwoPizza9621536/SocialMediaCatalog.git
 ```
 
 ## Development
 
+Clone the repository and in the repository directory install the library in
+editable mode.
+
 ```bash
-git clone https://github.com/TwoPizza9621536/SocialMediaCatalog.git
-cd SocialMediaCatalog
 pip install -e .
 ```
-
-This installs the library in editable mode.
 
 ## Changelog
 
@@ -63,4 +62,4 @@ Additionally, you are subjected under any ToS and Privacy Policy for APIs and
 Services.
 
 This project uses third party libraries, see
-[ThirdPartyLibraries.txt](ThirdPartyLibraries.txt).
+[THIRDPARTYLICENSES.TXT](THIRDPARTYLICENSES.TXT).
