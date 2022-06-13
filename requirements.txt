@@ -4,5 +4,5 @@
 dearpygui==1.6.2
 google-api-python-client==2.49.0
 google-auth-httplib2==0.1.0
-google-auth-oauthlib==0.5.1
+google-auth-oauthlib==0.5.2
 pyyaml==6.0
