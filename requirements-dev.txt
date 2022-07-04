@@ -8,6 +8,6 @@ flake8==4.0.1
 mypy==0.942
 pip-review==1.1.1
 pre-commit==2.19.0
-pylint==2.14.0
+pylint==2.14.4
 pytest==7.1.2
 tox==3.25.0
