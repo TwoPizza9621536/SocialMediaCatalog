@@ -38,12 +38,12 @@ The changelog can be found at [CHANGELOG.md](CHANGELOG.md).
 ## Contributing
 
 Pull Requests are welcome, but there are requirements before the code is merged
-in to the main branch. See the [contributing guidelines](CONTRIBUTING.md) before
-pulling. For major changes, please open an issue first to discuss what you would
-like to change.
+in to the main branch. See the [contributing guidelines](docs/CONTRIBUTING.md)
+before pulling. For major changes, please open an issue first to discuss the
+changes.
 
 Please make sure to test changes you have made to the project. Add yourself to
-the [contributors list](CONTRIBUTORS.md) so can you will be credited.
+the [contributors list](docs/CONTRIBUTORS.md) so can you will be credited.
 
 ## License
 
