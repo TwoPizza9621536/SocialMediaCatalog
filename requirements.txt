@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2022 The Social Media Catalog Contributors
 #
 # SPDX-License-Identifier: CC0-1.0
-dearpygui==1.6.2
+dearpygui==1.7.1
 google-api-python-client==2.49.0
 google-auth-httplib2==0.1.0
 google-auth-oauthlib==0.5.1
